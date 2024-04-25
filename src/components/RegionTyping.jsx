@@ -181,7 +181,7 @@ function RegionTyping() {
     ]
     //buttonHandler
     const buttonHandler=(area,scode)=>{
-        navigate(`https://recipe-app-api-tv4c.onrender.com/regions/${area}/${scode}`)
+        navigate(`/regions/${area}/${scode}`)
         return
     }
     return (
