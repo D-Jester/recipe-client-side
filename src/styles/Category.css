@@ -1,0 +1,54 @@
+.categoryLoading {
+    position: relative;
+    width: 100vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.categoryHeading {
+    position: relative;
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.categoryHeading .chp1 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.categoryHeading .chp1 h1 {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 4rem;
+    -webkit-text-stroke-color: red;
+    -webkit-text-stroke-width: 2px;
+    color: white;
+}
+
+.categoryHeading .chp2{
+    position: relative;
+    width: 80%;
+    margin-top: 2rem;
+    /* background-color: red; */
+    border: solid 6px red;
+    border-radius: 20px;
+    padding: 2rem;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2.5rem;
+}

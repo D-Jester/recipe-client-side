@@ -1,0 +1,146 @@
+.categoryDishLoading{
+    position: relative;
+    width: 100vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-top: 3rem;
+}   
+.categoryDishes{
+    position: relative;
+    width: 100vw;
+    height: auto;
+    display: grid;
+    place-items: center;
+    padding-block: 5rem;
+}
+.cardCategoryDishesContainer{
+    position: relative;
+    width: 100%;
+    display: grid;
+    row-gap: 5rem;
+    column-gap: 2rem;
+    grid-template-columns: repeat(3,1fr);
+    place-items: center;
+}
+.cardCategoryArticle{
+    position: relative;
+    height: auto;
+    width: auto;
+    overflow: hidden;
+}
+.cardCategoryArticle img{
+    position: relative;
+    max-width: 30rem;
+    width: 30rem;
+    height: auto;
+    border-radius: 30px;
+    object-fit: contain;
+    border: solid 2px black;
+    border-radius: 30px;
+}
+.cardCategoryArticle .categoryCardData{
+    position: absolute;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    background-color: rgb(231, 224, 224);
+    box-shadow: 0 8px 24px grey;
+    bottom:-9rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 1s 1s;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(108, 108, 17);
+}
+
+.categoryCardData button{
+    border-radius: 20px;
+    padding: 4px 8px;
+    border: solid 2px rgb(108, 108, 17);
+    outline: none;
+    cursor: pointer;    
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    -webkit-text-stroke-color: rgb(108, 108, 17);
+    -webkit-text-stroke-width: 0.8px;
+    color: white;
+    letter-spacing: 2px;
+    transition:.4s ;
+}
+
+/* setting hover effects */
+.categoryCardData button:hover{
+    background-color: rgb(108, 108, 17);
+}
+.categoryCardData button:active{
+    transform: scale(0.96);
+}
+.cardCategoryArticle:hover .categoryCardData{
+    animation: cardHoverFront 1s forwards;
+    opacity: 1;
+    transition: opacity .3s;
+}
+.cardCategoryArticle:hover{
+    animation: removeOverflow 2s forwards;
+}
+.cardCategoryArticle:not(:hover){
+    animation: showOverflow 2s forwards;
+}
+.cardCategoryArticle:not(:hover) .categoryCardData{
+    animation: removeCardHover 1s forwards;
+}
+/* animations */
+@keyframes cardHoverFront {
+    50%{
+        transform: translateY(-10rem);
+    }
+    100%{
+        transform: translateY(-6rem);
+    }
+}
+
+@keyframes removeOverflow {
+    to{
+        overflow: visible   ;
+    }
+}
+
+@keyframes removeCardHover {
+    0%{
+        transform: translateY(-6rem);
+    }
+    50%{
+        transform: translateY(-10rem);
+    }
+    100%{
+        transform: translateY(9rem);
+    }
+}
+
+@keyframes showOverflow{
+    0%{
+        overflow: visible;
+        pointer-events: none;
+    }
+    50%{
+        overflow: hidden;
+        pointer-events: none;
+    }
+    100%{
+        overflow: hidden;
+        pointer-events:all;
+    }
+
+}

@@ -1,0 +1,106 @@
+.regionTypingBody {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.CategoryR {
+    position: relative;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: brown;
+}
+
+.RegionContainer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.region {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 2rem;    
+}
+
+.flagSymbol {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.flag {
+    position: relative;
+    object-fit: fill;
+    transform: scale(2);
+}
+
+.regionDetails {
+    position: absolute;
+    height: 70%;
+    width: 120%;
+    top: 15%;
+    left: -10%;
+    background-color: rgba(181, 163, 163,0.8);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2rem;
+    border-radius: 20px;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+    transform: scale(0);
+}
+.regionDetails p{
+    visibility: hidden;
+    transition: 0.5s;
+    color: white;
+    -webkit-text-stroke: black;
+    -webkit-text-stroke-width: 1px;
+}
+
+.region:hover  > .flagSymbol{
+    box-shadow: 0 0 4px grey;
+    transform: scale(1.1);
+}
+
+.region:hover > .regionDetails{
+    transform: scale(1);
+}
+
+.region:hover > .regionDetails p{
+    visibility: visible;
+}
+#regionTypingBorderTop{
+    position: relative;
+    width: 100vw;
+    height: 1rem;
+    background-color: white;
+    margin-top: 1rem;
+}

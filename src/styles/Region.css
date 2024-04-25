@@ -1,0 +1,52 @@
+.RegionHeading {
+    position: relative;
+    width: 100vw;
+    height: 10rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.RegionHeading img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    opacity: 0.5;
+}
+
+.RegionHeading p {
+    position: inherit;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 6rem;
+    color: white;
+    -webkit-text-stroke-color: red;
+    -webkit-text-stroke-width: 2px;
+}
+.RegionHeading p::before{
+    content:"";
+    display: block;
+    width: 200%;
+    height: 6px;
+    position: absolute;
+    left: -200%;
+    top: 50%;
+    background-color: rgb(255, 0, 0);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.RegionHeading p::after{
+    content:"";
+    display: block;
+    width: 200%;
+    height: 6px;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    background-color: rgb(255, 0, 0);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
