@@ -30,9 +30,9 @@ function Navigation() {
           <p>ChefBook</p>
         </div>
         <div className='nc2'>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/About">About</Link></li>
-          <li><Link to="/Contact">Contact</Link></li>
+          <li><Link to="https://recipe-app-api-tv4c.onrender.com/">Home</Link></li>
+          <li><Link to="https://recipe-app-api-tv4c.onrender.com/About">About</Link></li>
+          <li><Link to="https://recipe-app-api-tv4c.onrender.com/Contact">Contact</Link></li>
           <button onClick={hamHandeler}><GiHamburgerMenu id='ncs' /></button>
         </div>
       </div>

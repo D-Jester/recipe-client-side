@@ -15,11 +15,11 @@ function Routing() {
     <div>
         {/* This segment deals with the routingpart of the main web app */}
         <Routes>
-            <Route path='/' element={<Home/>}  />
-            <Route path='/contact' element={<Contact/>} />
-            <Route path='/about' element={<About/>} />
-            <Route path='/regions/:region/:code' element={<Region/>} /> 
-            <Route path='/categories/:category' element={<Category />} />
+            <Route path='https://recipe-app-api-tv4c.onrender.com/' element={<Home/>}  />
+            <Route path='https://recipe-app-api-tv4c.onrender.com/contact' element={<Contact/>} />
+            <Route path='https://recipe-app-api-tv4c.onrender.com/about' element={<About/>} />
+            <Route path='https://recipe-app-api-tv4c.onrender.com/regions/:region/:code' element={<Region/>} /> 
+            <Route path='https://recipe-app-api-tv4c.onrender.com/categories/:category' element={<Category />} />
             <Route path='*' element={<Error/>} />
         </Routes>
     </div>
