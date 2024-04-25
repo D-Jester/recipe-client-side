@@ -15,7 +15,7 @@ function CategoryDishes({ category }) {
   const [categoryDishes, setCategoryDishes] = useState(null)
   //function
   const getRegionDishes = async () => {
-    const response = await axios.get('/categoryDishes', {
+    const response = await axios.get('https://recipe-app-api-tv4c.onrender.com/categoryDishes', {
       params: {
         c: category
       }

@@ -20,7 +20,7 @@ function CategoryTyping1() {
     const [category, setCategory] = useState(null)
     //functions
     const setCategories = async () => {
-        let response = await axios.get('/categoryList')
+        let response = await axios.get('https://recipe-app-api-tv4c.onrender.com/categoryList')
             .then(data => {
                 return data.data.data
             })

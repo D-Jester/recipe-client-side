@@ -19,7 +19,7 @@ function Category() {
     const [categories, setCategories] = useState(null)
     //functions
     const getCategories = async () => {
-        let response = await axios.get('/categoryList')
+        let response = await axios.get('https://recipe-app-api-tv4c.onrender.com/categoryList')
             .then(data => {
                 return data.data.data
             })

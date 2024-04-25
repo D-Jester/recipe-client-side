@@ -15,7 +15,7 @@ function RegionDishes({ region }) {
   const [regionDishes, setRegionDishes] = useState(null)
   //function
   const getRegionDishes = async () => {
-    const response = await axios.get('/regionDishes', {
+    const response = await axios.get('https://recipe-app-api-tv4c.onrender.com/regionDishes', {
       params: {
         r: region
       }
