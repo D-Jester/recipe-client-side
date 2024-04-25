@@ -17,7 +17,7 @@ function Body() {
     //functions 
     const callRandomDishes = async () => {
         try {
-            const response = await axios.get('/randomItems')
+            const response = await axios.get('https://recipe-app-api-tv4c.onrender.com/randomItems')
                 .then(data => { return data.data.data })
                 .catch(err => { return err })
             setRandomDishes(response)
