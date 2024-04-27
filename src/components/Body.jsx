@@ -12,6 +12,7 @@ import Loading from '../components/Loading'
 
 
 function Body() {
+    console.log(process.env.NODE_ENV)
     //variables
     let [randomDishes, setRandomDishes] = useState(null)
     //functions 
