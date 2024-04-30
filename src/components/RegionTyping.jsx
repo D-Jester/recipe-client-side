@@ -207,7 +207,9 @@ function RegionTyping() {
                                         initial="hidden1"
                                         whileInView={"show1"}
                                         className='region'
-                                        onClick={()=> buttonHandler(value.area,value.scode)}>
+                                        onClick={()=> buttonHandler(value.area,value.scode)}
+                                        key={value.scode}
+                                        >
                                         <div className='flagSymbol'>
                                             <value.code title={value.area} className='flag' />
                                         </div>

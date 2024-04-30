@@ -12,7 +12,7 @@ import RegionDishes from '../components/RegionDishes'
 //importing styles
 import '../styles/Region.css'
 
-function Region() {
+function Region({backendurl}) {
     const { region, code } = useParams()
     const link = "http://purecatamphetamine.github.io/country-flag-icons/3x2/" + code + ".svg"
     return (
@@ -26,7 +26,7 @@ function Region() {
                 <img src={link} alt="not found" />
                 <p>{region}</p>
             </motion.div>
-            <RegionDishes region={region} />
+            <RegionDishes region={region} backendurl={backendurl} />
         </>
     )
 }

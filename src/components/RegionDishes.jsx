@@ -1,5 +1,6 @@
 //importing dependencies
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 //motion
 import { motion } from 'framer-motion'
@@ -10,12 +11,13 @@ import Loading from './Loading'
 //importing style
 import '../styles/RegionDish.css'
 
-function RegionDishes({ region }) {
+function RegionDishes({ region,backendurl }) {
+  const navigate=useNavigate()
   //state variable
   const [regionDishes, setRegionDishes] = useState(null)
   //function
   const getRegionDishes = async () => {
-    const response = await axios.get('https://recipe-app-api-tv4c.onrender.com/regionDishes', {
+    const response = await axios.get(`${backendurl}/regionDishes`, {
       params: {
         r: region
       }
@@ -24,10 +26,19 @@ function RegionDishes({ region }) {
       .then(data => { return data.data.data.meals })
       .catch(err => { console.log(err); return; })
     setRegionDishes(response)
+    return
+  }
+  const handleCheckRecipe = (name,id) =>{
+    navigate(`/result/${name}/${id}`)
+    return
   }
   //effect
   useEffect(() => {
-    getRegionDishes()
+    if(regionDishes===null){
+      getRegionDishes()
+      return
+    }
+    return
   })
   //conditions
   if (regionDishes === null) {
@@ -54,7 +65,7 @@ function RegionDishes({ region }) {
                     <img src={value.strMealThumb} alt="not found" />
                     <div className='regionCardData'>
                       <h2 id='regionCardTitle'>{value.strMeal}</h2><br />
-                      <button id='regionCardButton'>Check Recipe</button>
+                      <button id='regionCardButton' onClick={()=>handleCheckRecipe(value.strMeal,value.idMeal)}>Check Recipe</button>
                     </div>
                   </motion.article>
                 </>

@@ -3,18 +3,16 @@ import React from 'react'
 //importing components
 import Header from '../components/Header'
 import Body from '../components/Body'
-import Category1 from "../components/CategoryTyping1"
+import Category from "../components/CategoryTyping"
 import RegionTyping from '../components/RegionTyping'
-import Result from '../components/Result'
 
-function Home() {
+function Home({backendurl}) {
   return (
     <div>
       <Header />
-      <Body />
-      <Category1 />
-      <RegionTyping/>
-      <Result />
+      <Body backendurl={backendurl} />
+      <Category backendurl={backendurl} />
+      <RegionTyping />
     </div>
   )
 }

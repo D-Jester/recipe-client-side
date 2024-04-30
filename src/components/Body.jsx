@@ -11,24 +11,22 @@ import '../styles/Body.css'
 import Loading from '../components/Loading'
 
 
-function Body() {
+function Body({ backendurl }) {
     //variables
     let [randomDishes, setRandomDishes] = useState(null)
     //functions 
     const callRandomDishes = async () => {
-        try {
-            const response = await axios.get('https://recipe-app-api-tv4c.onrender.com/randomItems')
-                .then(data => { return data.data.data })
-                .catch(err => { return err })
-            setRandomDishes(response)
-        } catch (err) {
-        }
+        const response = await axios.get(`${backendurl}/randomItems`)
+            .then(data => { return data.data.data })
+            .catch(err => { return console.log(err) })
+        setRandomDishes(response)
         return
     }
     //random food effects
     useEffect(() => {
-        if(randomDishes===null){
+        if (randomDishes === null) {
             callRandomDishes()
+            return
         }
         return
     })
@@ -62,10 +60,10 @@ function Body() {
                         {
                             randomDishes.map(value => {
                                 return (
-                                    <div className="slide">
+                                    <div className="slide" key={value.meals[0].idMeal}>
                                         <img src={value.meals[0].strMealThumb} alt="Not found" />
                                         <div className="Details">
-                                            <p><span>Name:</span> <b>{value.meals[0].strMeal}</b></p><br/>
+                                            <p><span>Name:</span> <b>{value.meals[0].strMeal}</b></p><br />
                                             <p><span>Type:</span> <b>{(value.meals[0].strArea === 'Unknown') ? '-' : value.meals[0].strArea}</b></p>
                                         </div>
                                     </div>

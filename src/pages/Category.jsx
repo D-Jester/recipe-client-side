@@ -13,26 +13,28 @@ import Loading from '../components/Loading'
 //importing styles
 import '../styles/Category.css'
 
-function Category() {
+function Category({ backendurl }) {
     const { category } = useParams()
     //state variale
     const [categories, setCategories] = useState(null)
     //functions
     const getCategories = async () => {
-        let response = await axios.get('https://recipe-app-api-tv4c.onrender.com/categoryList')
+        let response = await axios.get(`${backendurl}/categoryList`)
             .then(data => {
                 return data.data.data
             })
             .catch(err => {
-                console.log(err)
-                return err
+                return console.log(err)
             })
         setCategories(response)
         return
     }
     //effect 
     useEffect(() => {
-        getCategories()
+        if (categories === null) {
+            getCategories()
+            return
+        }
         return
     })
     if (categories === null) {
@@ -78,7 +80,7 @@ function Category() {
                         })
                     }
                 </div>
-                <CategoryDishes category={category} />
+                <CategoryDishes category={category} backendurl={backendurl} />
             </div>
         )
     }

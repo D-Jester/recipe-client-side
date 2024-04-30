@@ -13,27 +13,28 @@ import '../styles/CategoryCard.css'
 import Loading from './Loading.jsx'
 //importing file
 import CategoryTypingImage from '../images/recipebackground.png'
-function CategoryTyping1() {
+function CategoryTyping({backendurl}) {
     //setting navigation
     const navigate = useNavigate()
     //setting category
     const [category, setCategory] = useState(null)
     //functions
     const setCategories = async () => {
-        let response = await axios.get('https://recipe-app-api-tv4c.onrender.com/categoryList')
+        let response = await axios.get(`${backendurl}/categoryList`)
             .then(data => {
                 return data.data.data
             })
             .catch(err => {
-                console.log(err)
-                return err
+                return console.log(err)
             })
         setCategory(response)
         return
     }
     //effect hook
     useEffect(() => {
-        setCategories()
+        if(category===null){
+            setCategories()
+        }
         return
     })
     //handle button
@@ -41,9 +42,10 @@ function CategoryTyping1() {
         navigate(`/categories/${category}`)
     }
     if (category === null) {
-        <Loading />
+        return(
+            <Loading />
+        )
     } else {
-        // console.log(category)
         return (
             <>
                 {/* Heading */}
@@ -73,6 +75,7 @@ function CategoryTyping1() {
                                         onClick = {()=>{
                                             return handleButton(value.type)
                                         }}
+                                        key={value.name}
                                     >
                                         <div className="cardFlip">
                                             <div className="categorycard">
@@ -94,4 +97,4 @@ function CategoryTyping1() {
 }
 
 
-export default CategoryTyping1
+export default CategoryTyping
