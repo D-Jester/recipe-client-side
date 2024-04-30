@@ -12,7 +12,7 @@ import Loading from '../components/Loading'
 
 
 function Body({ backendurl }) {
-    //variables
+    // statuc variables
     let [randomDishes, setRandomDishes] = useState(null)
     //functions 
     const callRandomDishes = async () => {
