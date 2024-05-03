@@ -31,6 +31,8 @@
 }
 
 .resultDetails .resultImage img {
+    position: relative;
+    width: 100%;
     border: solid 8px black;
     border-radius: 30px;
 }
@@ -157,5 +159,8 @@
     }
     .resultContainer .moreDetails .procedure{
         width: 80%;
+    }
+    .resultDetails .resultImage{
+        width: 70%;
     }
 }
