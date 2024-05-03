@@ -6,10 +6,10 @@ import Body from '../components/Body'
 import Category from "../components/CategoryTyping"
 import RegionTyping from '../components/RegionTyping'
 
-function Home({backendurl}) {
+function Home({backendurl, setPre}) {
   return (
     <div>
-      <Header />
+      <Header backendurl={backendurl} setPre={setPre} />
       <Body backendurl={backendurl} />
       <Category backendurl={backendurl} />
       <RegionTyping />

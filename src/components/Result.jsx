@@ -1,3 +1,4 @@
+//importing dependencies
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 //importing components
@@ -5,7 +6,7 @@ import Loading from './Loading'
 //importing styles
 import '../styles/Result.css'
 
-function Result({ name, id, backendurl }) {
+function Result({ name, id, backendurl, preSearched }) {
     const [result, setResult] = useState(null)
     //function
     const getResult = async () => {
@@ -22,16 +23,30 @@ function Result({ name, id, backendurl }) {
                 return console.log(err)
             })
         setResult(response)
+        preSearched = result
         return
+    }
+    const setPreSearchedResult = (preSearched) =>{
+        setResult(preSearched)
     }
     //effect
     useEffect(() => {
-        if (result === null) {
+        console.log(preSearched)
+        if (result === null && (preSearched === null || preSearched === undefined)) {
             getResult()
             return
         }
-        return
-    })
+        else if(result === null && (preSearched !== null || preSearched!==undefined)){
+            setPreSearchedResult(preSearched)
+        }
+        else if(result!== null && (preSearched !== null || preSearched!==undefined)){
+            setPreSearchedResult(preSearched)
+        }
+        else{
+            return
+        }
+       
+    },[preSearched])
 
     //condition
     if (result === null) {
@@ -54,7 +69,7 @@ function Result({ name, id, backendurl }) {
                                 <h1><span>Meal ID</span>: {result.id}</h1>
                                 <h2><span>Category:</span> {result.category}</h2>
                                 <h2><span>Area:</span> {result.area}</h2>
-                                <h3><span>Youtube Referel: </span><a href={result.youtubeLink} target='_blank'>Click here</a></h3>
+                                <h3><span>Youtube Referel: </span><a href={result.youtubeLink} rel='noreferrer' target='_blank'>Click here</a></h3>
                             </div>
                         </div>
                         <div className="resultMargin"></div>

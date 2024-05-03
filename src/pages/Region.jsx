@@ -12,12 +12,12 @@ import RegionDishes from '../components/RegionDishes'
 //importing styles
 import '../styles/Region.css'
 
-function Region({backendurl}) {
+function Region({backendurl , setPre}) {
     const { region, code } = useParams()
     const link = "http://purecatamphetamine.github.io/country-flag-icons/3x2/" + code + ".svg"
     return (
         <>
-            <Header />
+            <Header setPre={setPre} />
             <motion.div
                 variants={fadeIn("down", 0.15)}
                 initial="hidden2"
@@ -26,7 +26,7 @@ function Region({backendurl}) {
                 <img src={link} alt="not found" />
                 <p>{region}</p>
             </motion.div>
-            <RegionDishes region={region} backendurl={backendurl} />
+            <RegionDishes region={region} backendurl={backendurl} setPre={setPre} />
         </>
     )
 }

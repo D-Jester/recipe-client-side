@@ -11,7 +11,7 @@ import '../styles/Header.css'
 import SearchBox from './SearchBox'
 import Navigation from './Navigation'
 
-function Header() {
+function Header({backendurl, setPre}) {
   return (
     <div className='header'>
 
@@ -30,7 +30,7 @@ function Header() {
         variants={fadeIn("down", 0.15)}
         initial="hidden1"
         whileInView={"show1"}
-        className='search'><SearchBox /></motion.div>
+        className='search'><SearchBox backendurl={backendurl} setPre={setPre} /></motion.div>
     </div>
   )
 }

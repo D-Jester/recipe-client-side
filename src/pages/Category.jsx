@@ -13,7 +13,7 @@ import Loading from '../components/Loading'
 //importing styles
 import '../styles/Category.css'
 
-function Category({ backendurl }) {
+function Category({ backendurl,setPre }) {
     const { category } = useParams()
     //state variale
     const [categories, setCategories] = useState(null)
@@ -46,7 +46,7 @@ function Category({ backendurl }) {
     } else {
         return (
             <div>
-                <Header />
+                <Header setPre={setPre} />
                 <div className='categoryHeading'>
                     {
                         categories.map(value => {
@@ -80,7 +80,7 @@ function Category({ backendurl }) {
                         })
                     }
                 </div>
-                <CategoryDishes category={category} backendurl={backendurl} />
+                <CategoryDishes category={category} backendurl={backendurl} setPre={setPre} />
             </div>
         )
     }

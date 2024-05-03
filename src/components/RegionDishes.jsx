@@ -11,7 +11,7 @@ import Loading from './Loading'
 //importing style
 import '../styles/RegionDish.css'
 
-function RegionDishes({ region,backendurl }) {
+function RegionDishes({ region,backendurl,setPre }) {
   const navigate=useNavigate()
   //state variable
   const [regionDishes, setRegionDishes] = useState(null)
@@ -29,6 +29,7 @@ function RegionDishes({ region,backendurl }) {
     return
   }
   const handleCheckRecipe = (name,id) =>{
+    setPre(null)
     navigate(`/result/${name}/${id}`)
     return
   }

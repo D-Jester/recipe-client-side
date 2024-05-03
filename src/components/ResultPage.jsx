@@ -4,12 +4,12 @@ import { useParams } from 'react-router-dom'
 import Header from './Header'
 import Result from './Result'
 
-function ResultPage({ backendurl }) {
+function ResultPage({ backendurl,preSearched,setPre }) {
     const { name, id } = useParams()
     return(
         <div>
-            <Header/>
-            <Result name={name} id={id} backendurl={backendurl} />
+            <Header backendurl={backendurl} setPre={setPre}/>
+            <Result name={name} id={id} backendurl={backendurl} preSearched={preSearched} />
         </div>
     )
 }
