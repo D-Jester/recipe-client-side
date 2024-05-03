@@ -69,5 +69,11 @@
         width: 16rem;
         height: 16rem;
     }
+    .CategoryContainer .card{
+        flex-basis: 45%;
+        margin: 0;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
 }
 

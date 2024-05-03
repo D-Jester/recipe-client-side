@@ -123,8 +123,39 @@
     margin-left: 3rem;
     margin-right: 3rem;
 }
+.resultContainer .moreDetails .procedure ul li{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 .resultContainer .moreDetails .procedure h1{
     margin-bottom: 2rem;
     text-decoration: underline;
     color: rgb(158, 15, 15);
+}
+
+/* responsive code */
+@media screen and (max-width:450px) {
+    .resultContainer .resultDetails{
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .resultDetails .details{
+        width: 95%;
+        text-align: center;
+        margin-top: 1rem;
+    }    
+
+    .resultContainer .moreDetails{
+        flex-direction: column;
+    }
+    .resultContainer .moreDetails .ingredients{
+        width: 95%;
+        border: none;
+    }
+    .resultContainer .moreDetails .procedure{
+        width: 80%;
+    }
 }
